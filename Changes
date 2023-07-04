@@ -1,0 +1,330 @@
+Revision history for Red
+
+{{$NEXT}}
+    - Fix test on Pg
+    - Accept .classify with multiple columns
+    - Add raku method to Red::Model
+
+0.1.66  2022-12-18T21:55:33Z
+    - Add `is view`
+    - Add `is virtual-view`
+    - Make join-model accept string
+    - Make column accept multiple traits
+
+0.1.65  2022-12-14T21:26:26Z
+    - Add `.table-formatter` to Red::Driver
+    - Add between
+    - Add :default
+    - Add lock types for select
+    - Add skip-locked method
+    - make delete return Object
+
+0.1.63  2022-06-20T02:10:33+01:00
+    - Adding `skip` to ResultSeq and make `from` an alias to it
+    - fix UPDATE with NULL value
+
+0.1.62  2022-06-17T20:12:15+01:00
+    - fix the way enums are stored on models (decont)
+    - set type on column when setting Nil to it (TODO: handle default values)
+
+0.1.61  2022-06-11T21:11:28+01:00
+    - add error message on specific raku versions
+    - add == and eq operators for enumerables
+    - fix aggreg methods race condition
+    - fix test 61
+
+0.1.60  2022-05-14T16:09:15+01:00
+    - fix Pg select json (missing update)
+    - add relationship agregations #514
+    - fix .^create with Seq
+
+0.1.59  2022-04-30T15:52:08+01:00
+    - fix schema.create
+
+0.1.58  2022-04-10T23:01:15+01:00
+    - add `is sub-model` to `subset`
+
+0.1.57  2022-04-03T20:10:00+01:00
+    - submodel do not need a name
+
+0.1.57  2022-04-03T18:44:25+01:00
+    - Fix dependency
+
+0.1.56  2022-04-03T01:09:36+01:00
+    - Fix coersion test
+    - Create .^submodel
+
+0.1.55  2022-04-01T21:23:35+01:00
+    - Moving Red to zef ecosystem
+    - Make auto detect array types
+
+0.1.55  2022-03-07T21:48:40Z
+    - Fix Red::Schema.create's emit
+    - Fix several AST translations with enum
+
+0.1.54  2021-12-21T00:47:26Z
+    - Break when accessing a column on a Type object
+    - .^saved-on-db on prefetched relationships
+
+0.1.53  2021-11-22T02:17:40Z
+    - Separate the Model generation for changing attributes
+    - Make join on update use subselect
+    - Teaching AST new dance moves (.replace)
+    - Create Red::Config
+
+0.1.52  2021-10-22T21:33:53+01:00
+    - Fix usage of parameterized roles
+
+0.1.51  2021-10-14T21:11:05+01:00
+    - Fix red-do on SQLite
+
+0.1.49  2021-10-06T18:16:00Z
+    - Error on new with wrong type parameter
+    - Create on transaction
+
+0.1.49  2021-10-06T18:16:00Z
+    - Send to cpan... (error on release)
+
+0.1.48  2021-10-06T17:47:32Z
+    - Throws error when setting a column attribute to a wrong type value
+
+0.1.47  2021-09-13T22:55:22+01:00
+    - Create Red.ping
+    - Create Red::Driver.ping
+    - small fix to introductory README example #502 (thanks @dwarring)
+    - Really create a new connection for transaction in Pg #504 (thanks @jonathanstowe)
+    - Fix sporadic warnings #509 (thanks @jonathanstowe)
+    - Ensure use attr name not column name in new-from-data #511 (thanks @jonathanstowe)
+
+0.1.46  2021-07-21T20:01:44+01:00
+    - Accept aliases on schema
+
+0.1.45  2021-07-18T22:30:28+01:00
+    - Add documentation for `is column`
+    - Forbid running .^create on defined model
+    - Accept enums
+    - Add optimization for X && (Y && !X) => False
+
+0.1.44  2021-05-30T20:20:04+01:00
+    - Add should-drop-cascade to decide if it should use cascade to drop table
+
+0.1.43  2021-05-02T17:39:54+01:00
+    - Retrying to release
+
+0.1.42  2021-05-02T17:05:09+01:00
+    - Accept models (on referencing and on relationship) as object type
+    - Regenerate docs
+
+0.1.41  2021-04-27T00:39:46+01:00
+    - Fix dynamicaly `does` and `^mixin` on models (thanks Jonathan Stowe)
+
+0.1.40  2021-03-28T22:23:09+01:00
+    - Map new UNIQUE SQLite error
+
+0.1.39  2021-03-28T21:28:42+01:00
+    - Add table-name-wrapper
+    - Fix has-one create
+
+0.1.38  2021-02-22T19:41:38Z
+    - Fix multi comparators conflict
+
+0.1.37  2021-02-22T19:08:09Z
+    - Add comparison to DateTime
+
+0.1.36  2021-02-20T23:44:52Z
+    - NM relationship sample and test
+
+0.1.35  2021-02-18T23:12:51Z
+    - Remove use lib from CLI
+    - add -I option to CLI
+    - add --debug option to CLI
+
+0.1.34  2021-02-18T01:53:05Z
+    - Use DB's table formatter
+
+0.1.33  2021-02-16T19:31:56Z
+    - Fix refresh
+
+0.1.32  2021-02-16T01:55:55Z
+    - Fix pre-compiled experimental features
+    - Fix formatter spelling
+
+0.1.31  2021-02-14T21:04:28Z
+    - Add experimental refreshable
+
+0.1.30  2021-02-14T20:53:39Z
+    - Fix column type bug
+    - Add experimental update-/aggregate-supply
+    - Add no-optimization use's option
+
+0.1.29  2020-11-22T00:11:21Z
+    - fix in translation
+    - fix .join-model's column
+    - fix fallback
+
+0.1.28  2020-11-07T18:25:01Z
+    - create experimental `has-one`
+
+0.1.27  2020-10-31T21:28:57Z
+    - Unique constraint fixes
+
+0.1.26  2020-07-24T00:25:06+01:00
+    - Add inflation to Str -> Duration
+    - Fix some comparisons between Seq and ResultSeq
+
+0.1.25  2020-07-23T21:01:46+01:00
+    - Adds now and today to columnMethods
+
+0.1.24  2020-07-22T23:22:30+01:00
+    - Make before-update phaser work on updating ResultSeq
+
+0.1.23  2020-07-22T21:20:24+01:00
+    - Fix bind order on update
+
+0.1.22  2020-07-22T17:49:46+01:00
+    - Fix created obj's Poxy
+    - fix new-from-data from retuning data
+    - Add -- and ++ prefix and postfix
+
+0.1.21  2020-07-21T01:15:24+01:00
+    - Add experimental short name for tables
+
+0.1.20  2020-07-21T00:43:15+01:00
+    - Add experimental feature for format table name
+
+0.1.19  2020-07-20T18:01:10+01:00
+    - Fix bug on setting type of a column
+
+0.1.18  2020-07-17T20:25:01+01:00
+    - Set unique fields by group
+
+0.1.17  2020-07-16T01:15:11+01:00
+    - custom join ,create
+    - custom join from defined model
+
+0.1.16  2020-07-11T17:54:39+01:00
+    - Add sentences test
+    - Fix undefined model .^rs bug
+    - Fix 2 joins same table bug
+
+0.1.15  2020-07-09T17:23:42+01:00
+    - Add varchar as possible type
+
+0.1.14  2020-07-07T22:33:33+01:00
+    - fix time tracker example
+
+0.1.13  2020-06-30T01:04:41+01:00
+    - Create Red::Cli
+
+0.1.12  2020-06-29T02:52:51+01:00
+    - prepare-database on red CLI
+
+0.1.11  2020-06-29T02:24:29+01:00
+    - Add prepare-database do red CLI
+    - Add .^populate to Metaclass
+
+0.1.10  2020-06-28T14:47:41+01:00
+    - rename ResultSeq.join to ResultSeq.join-model
+    - create ResultSeq.join to mimic Positional.join
+
+0.1.9  2020-06-23T15:38:43+01:00
+    - SQLite error changing number
+
+0.1.8  2020-06-19T00:26:56+01:00
+    - Fix update
+
+0.1.7  2020-06-06T22:00:32+01:00
+    - Fix #424
+    - Add is-handling experimental feature
+
+0.1.6  2020-04-10T19:25:12+01:00
+    - Add option `:no-prefetch` to relationship
+    - Auto prefetches to-one relationships
+
+0.1.5  2020-01-13T00:05:12Z
+    - create Red::Schema class
+    - change tests to use Red::Schema class where needed
+
+0.1.4  2020-01-02T23:56:28Z
+    - fix `.^create-table: :if-not-exists`
+
+0.1.3  2019-12-31T22:17:46Z
+    - fix README example
+
+0.1.2  2019-12-31T21:38:09Z
+    - fallback to original map/grep when printing
+    - fallback to original map when block has a count higher than 1
+    - fix bug when not defining column type
+
+0.1.1  2019-12-30T02:10:01Z
+    - Add validation on `is referencing` trait for :api<2>
+    - Accept multi-column relationship
+
+0.1.0  2019-12-21T01:24:41Z
+    - xmas example
+    - accept map's block returning Red::Model
+    - json type
+    - :optional on relationships
+    - join types (inner, outer, left, right)
+    - Fix Divisable (%%)
+    - ResultSeq.join
+    - custom join
+    - join
+    - red-do isn't experimental anymore
+    - :api<2>
+
+0.0.6  2019-10-18T00:36:18+01:00
+    - Fix the flickering test
+
+0.0.5  2019-10-18T00:00:57+01:00
+    - ResultSeq.classify(...).Bag
+    - ResultSeq.classify(...).Set
+    - ResultSeq.map(...).classify
+    - ResultSeq.map(...).Bag
+    - ResultSeq.map(...).Set
+    - Create ResultSeq.push
+    - Red::ResultSeq does Positional
+    - Fix .head
+    - Lots of documentation
+
+0.0.4  2019-08-19T18:39:45+01:00
+    - accept && and ||
+    - Fix optimizations
+    - Red CLI
+    - Fix id edition
+    - Fix id-map
+    - Track if the object is on DB and use it to decide between insert and update
+    - Allow creation of Red::Driver::* from an existing DB object
+    - ResultSeq.Bool should return count(*) > 0
+    - ResultSeq.elems should return something that is comparable to an Int
+    - Generate nicer SQL for "is NULL"
+    - Support UUID columns on Pg
+    - Possible Documentation Error
+    - Table and column comments
+    - Support temporary tables
+    - Add a comment to easily find the query in the code
+    - Test if exists id before .^save()ing
+    - Provide a ```.perl``` for model objects that only includes the columns, not relations and internals.
+    - Provide for no-op table creation if table exists
+    - Refactor optimisations
+    - Create relations if data provided to .^create
+    - Unique column results in duplicated UNIQUE in generated SQL
+    - Fix .^load without id
+
+
+0.0.3  2019-02-27T23:21:09Z
+    - add union (∪), intersect(∩) and minus(⊖)
+    - make .elems return a Int
+    - accept a instance of the db lib on database function
+    - create with relationship objects
+    - is null
+    - return more than 1 column on map
+    - UUID
+    - bind on infixes
+    - bind on insert
+
+0.0.2  2019-01-04T00:35:02-02:00
+    - Fix pod
+
+0.0.1  2019-01-03T22:37:53-02:00
+    - Initial version
